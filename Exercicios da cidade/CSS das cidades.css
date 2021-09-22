@@ -1,0 +1,35 @@
+#container {
+    
+    background: rgb(0, 0, 0);
+    padding-bottom: 30px;
+    overflow: hidden;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(11, 255, 243);
+    width: 950x;
+    margin-left:15%;
+    border-radius: 50px 50px 50px 50px;
+}
+
+figure.polaroid{
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: inline-block;
+  
+}
+figure>figcaption{
+    padding: 5px;
+}
+img{
+    width: 100%;
+    border-radius: 10%;
+}
+figcaption{
+    font-family: sans-serif;
+    font-size: small ;
+}
+
+.container{
+    text-align: center;
+}
