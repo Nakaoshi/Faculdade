@@ -1,0 +1,22 @@
+--1 e 2 
+select employee_id , last_name, salary, round(salary*1.155) as "NOVO_SALARIO", round(salary*0.155) as "diferença salarial" from hr.employees
+
+--3              1
+select initcap(last_name) as "Sobrenome", LENGTH(last_name) as "tamanho do sobrenome" from hr.employees 
+where first_name like 'A%' 
+or first_name like 'J%' 
+or first_name like 'M%' 
+order by last_name 
+
+
+--criar tabela
+create table sim(
+codigo number(4),
+nome varchar2(30),
+sobrenome varchar2(30),
+salario number(5,2)
+)
+select* from sim
+
+--deleta tabela
+drop table sim

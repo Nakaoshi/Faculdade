@@ -1,0 +1,85 @@
+1) sim, esta rodando o comando mas é necessario adicionar o "hr." (coisa que no PDF não possui)
+
+2) 
+ - existe um "x" no lugar de um asterisco (*);
+ - está faltando o "hr." no from ( não sei se é proposital ou não);
+ - "ANNUAL SALARY" é um apelido sem definição ( "as" );
+ - from está no final do codigo
+ - "salary" esta como "sal" 
+ - de "last_name" para "salary" não há divisão por vírgula
+
+/* sim deu 6 com o "extra" do hr.*/
+
+3) select job_title , max_salary from hr.jobs where job_title = 'President' and max_salary = 40000
+
+4) select * from hr.departments where manager_id = '200' or location_id = 1700
+
+5) select job_id, salary from hr.employees where salary > 10000
+
+6)select employee_id as "Employee#", first_name as "First Name#", last_name as "Last Name#", email as "Email#" , phone_number as "Phone Number#" , hire_date as " Hire Date#", job_id as "Job Ident#" , salary as "Sal#" , commission_pct as "commission#" , manager_id as "manager ident#" , department_id as "departament indent#" from hr.employees
+
+7) select 'o funcionario' || ' com o sobrenome de ' || last_name || ' tem o id de funcionario é ' || job_id "empregado e titulo" from hr.employees
+
+8) select last_name , salary from hr.employees where salary > 12000
+
+9) select last_name, department_id from hr.employees where department_id like '%100%'
+
+10) select last_name , salary from hr.employees where salary not between 5000 and 12000
+
+11) select last_name , job_id , hire_date from hr.employees where last_name in( 'Matos','Taylor') order by hire_date 
+
+12) select last_name , department_id from hr.employees where department_id in (25 , 50)
+
+13)select last_name , salary , commission_pct from hr.employees where commission_pct is not null order by commission_pct desc
+
+14) select last_name from hr.employees where last_name  like '%a%' and last_name like '%e%' 
+
+15) select last_name , job_id , salary from hr.employees where  job_id in ('SA_REP' , 'ST_CLERK') and salary <> 2500 and salary <> 3500 and salary <> 7000 
+
+16) select * from hr.employees where commission_pct in (.2)
+
+17) select department_id , avg(salary) from hr.employees where department_id in (60, 100 , 20) group by department_id order by department_id desc
+
+18) 
+
+create table funcionarios (
+codigo number (8) primary key,
+nome varchar(30) not null,
+salario number(8),
+celular char (11)
+); 
+
+insert into funcionarios (codigo , nome , salario , celular) values (65 , 'sim' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (21 , 'sm' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (23 , 'si' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (29, 'simo' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (28 , 'simu' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (21, 'simy' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (20 , 'sime' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (9 , 'simw' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (6 , 'simw' , 4000 , 19484494)
+insert into funcionarios (codigo , nome , salario , celular) values (4 , 'simq' , 4000 , 19484494)
+select * from funcionarios order by codigo 
+
+insert into funcionarios values(1, 'nao' , 8959 , 641984916) 
+insert into funcionarios values(2, 'na' , 8959 , 641984916) 
+insert into funcionarios values(3, 'ao' , 8959 , 641984916) 
+insert into funcionarios values(4, 'no' , 8959 , 641984916) 
+insert into funcionarios values(5, 'naum' , 8959 , 641984916) 
+insert into funcionarios values(6, 'nonono' , 8959 , 641984916) 
+insert into funcionarios values(7, 'naa' , 8959 , 641984916) 
+insert into funcionarios values(8, 'jaCanseiDeEscreverNão' , 8959 , 641984916) 
+insert into funcionarios values(91, 'naaao' , 8959 , 641984916) 
+insert into funcionarios values(10, 'naooooo' , 8959 , 641984916) 
+
+
+
+
+
+
+
+
+
+
+
+

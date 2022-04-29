@@ -1,0 +1,73 @@
+create table funcionarios (
+    cd_funcionario number(30) primary key, 
+    nome varchar2(30),
+    sobrenome varchar2(30),
+    salario number(20),
+    cd_dept number(30) references departamento(cd_dept)
+);
+
+create table departamento (
+    cd_dept number(30) primary key,
+    nome_dpt varchar2(30),
+    ds_dept varchar2(30)
+);
+drop table funcionarios ;
+drop table departamento;
+
+
+insert into departamento values(10,'TI','tecnologia da informação');
+insert into departamento values(50,'Diretoria','Diretoria Regional');
+insert into departamento values(30,'Tesouraria','Departamento de finanças');
+insert into departamento values(15,'Rh','Recursos Humanos');
+
+insert into funcionarios (cd_funcionario, nome, sobrenome,salario,cd_dept) values (1,'Marcelo', 'Diniz',1000,10);
+insert into funcionarios (cd_funcionario, nome, sobrenome,salario,cd_dept) values (2,'Carlos', 'Lima',1500,10);
+insert into funcionarios (cd_funcionario, nome, sobrenome,salario,cd_dept) values (3,'Roberto', 'Pires',10000,30);
+insert into funcionarios (cd_funcionario, nome, sobrenome,salario,cd_dept) values (4,'Fernanda', 'Souza',30000,50);
+insert into funcionarios (cd_funcionario, nome, sobrenome,salario,cd_dept) values (5,'Roberta', 'Peres',5000,30);
+insert into funcionarios (cd_funcionario, nome, sobrenome,salario,cd_dept) values (6,'Caio', 'Viana',3000,15);
+
+--a)
+select cd_dept, avg(salario) from funcionarios group by cd_dept;
+--b)
+select  nome from funcionarios where nome like '%a%';
+--c)
+select salario from funcionarios where salario between 15000 and 30000;
+-- d)
+select salario*1.10 from funcionarios where cd_funcionario = 5 ;
+-- e)
+select salario*1.20 from funcionarios where cd_dept = 30;
+-- f)
+update funcionarios set salario = salario*1.0065
+-- g)
+delete  from funcionarios where nome = 'Marcelo';
+-- h)
+delete from funcionarios where cd_dept = 10;
+
+-- i)
+delete from funcionarios ;
+
+-- j)
+drop table funcionarios ;
+
+-- k)
+update departamento set cd_dept=100 where cd_dept = 10; --questao anulada
+
+-- l)
+update departamento set nome_dpt = 'Terceirizado' where cd_dept = 10
+
+-- m)
+select count(nome_dpt) from departamento
+
+-- n)
+delete from departamento
+
+-- o)
+drop table departamento
+
+
+
+
+
+
+
